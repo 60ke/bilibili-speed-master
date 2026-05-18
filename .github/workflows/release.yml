@@ -8,6 +8,8 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write # 必须显式开启写权限以创建 Release
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
