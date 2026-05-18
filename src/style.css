@@ -1,0 +1,43 @@
+/* Style for injected custom speed menu items */
+.bpx-player-ctrl-playbackrate-menu-item.custom-speed-item {
+    color: #fb7299 !important;
+    font-weight: bold;
+}
+
+.custom-speed-input-container {
+    padding: 8px 12px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.custom-speed-label {
+    font-size: 11px;
+    margin-bottom: 6px;
+    color: #fb7299;
+    white-space: nowrap;
+}
+
+.custom-speed-input {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 2px;
+    color: #fff;
+    width: 100%;
+    box-sizing: border-box;
+    text-align: center;
+    font-size: 12px;
+    outline: none;
+    padding: 2px 0;
+}
+
+.custom-speed-input::placeholder {
+    font-size: 10px;
+    color: rgba(255, 255, 255, 0.4);
+}
+
+.custom-speed-input:focus {
+    border-color: #fb7299;
+    background: rgba(251, 114, 153, 0.1);
+}

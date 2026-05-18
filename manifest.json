@@ -1,0 +1,35 @@
+{
+  "manifest_version": 3,
+  "name": "Bilibili Speed Master",
+  "version": "1.0",
+  "description": "Unlock higher playback speeds on Bilibili (up to 16x) with custom input.",
+  "permissions": ["storage"],
+  "background": {
+    "service_worker": "src/background.js"
+  },
+  "action": {
+    "default_popup": "src/popup.html",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    }
+  },
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "*://*.bilibili.com/video/*",
+        "*://*.bilibili.com/list/*",
+        "*://*.bilibili.com/blackboard/html5mobileplayer.html*"
+      ],
+      "js": ["src/content.js"],
+      "css": ["src/style.css"],
+      "run_at": "document_start"
+    }
+  ]
+}
