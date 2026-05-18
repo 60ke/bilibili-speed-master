@@ -1,0 +1,33 @@
+name: Build and Release CRX
+
+on:
+  push:
+    tags:
+      - 'v*' # 当你推送以 v 开头的 tag（如 v1.0.0）时触发
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Build extension zip
+        run: |
+          zip -r bilibili-speed-master.zip manifest.json src icons
+
+      - name: Package CRX
+        uses: axetroy/chrome-extension-build-action@v1
+        with:
+          extension-id: mphoolaadobkjnpcdjilphaagoihjonk # 如果你有固定的ID可以填，没有则留空自动生成
+          zip-path: bilibili-speed-master.zip
+          key: ${{ secrets.CRX_PRIVATE_KEY }}
+
+      - name: Create Release
+        uses: softprops/action-gh-release@v1
+        with:
+          files: |
+            bilibili-speed-master.zip
+            *.crx
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
