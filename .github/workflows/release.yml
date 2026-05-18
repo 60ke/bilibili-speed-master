@@ -16,18 +16,10 @@ jobs:
         run: |
           zip -r bilibili-speed-master.zip manifest.json src icons
 
-      - name: Package CRX
-        uses: axetroy/chrome-extension-build-action@v1
-        with:
-          extension-id: mphoolaadobkjnpcdjilphaagoihjonk # 如果你有固定的ID可以填，没有则留空自动生成
-          zip-path: bilibili-speed-master.zip
-          key: ${{ secrets.CRX_PRIVATE_KEY }}
-
       - name: Create Release
         uses: softprops/action-gh-release@v1
         with:
           files: |
             bilibili-speed-master.zip
-            *.crx
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
