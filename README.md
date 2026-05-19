@@ -22,6 +22,11 @@
 
 ## 📦 安装说明
 
+### 方法 A：通过 Chrome 应用商店安装（推荐）
+1. 点击访问：[Bilibili Speed Master 商店页面](https://chromewebstore.google.com/detail/bilibili-speed-master/mphoolaadobkjnpcdjilphaagoihjonk)。
+2. 点击“添加至 Chrome”按钮即可。
+
+### 方法 B：手动安装（离线/开发版）
 1. 下载本仓库或 Release 中的 `bilibili-speed-master.zip`。
 2. 在 Chrome 浏览器进入 `chrome://extensions/`。
 3. 开启右上角的“开发者模式”。
